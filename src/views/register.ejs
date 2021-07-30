@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('./parts/meta-head', { pageTitle: 'Agenda', pageDescription: 'Crie
+  uma nova conta gratuitamente.', needScript: false, scriptSrc: null }) %>
+
+  <body>
+    <%- include('./parts/header') %> <%- include('./parts/messages') %>
+
+    <main role="main">
+      <h2 class="title">Crie sua conta gratuitamente</h2>
+
+      <form
+        action="/login/register"
+        method="POST"
+        class="form login-form"
+        role="form"
+      >
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+        <label for="name" class="sr-only">Nome de usuário</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Nome de usuário"
+        />
+
+        <label for="password" class="sr-only">Senha</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Senha"
+        />
+
+        <button class="btn-default" role="button">Continuar</button>
+      </form>
+    </main>
+  </body>
+</html>

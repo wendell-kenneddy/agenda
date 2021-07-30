@@ -1,0 +1,22 @@
+@layer components {
+  .contacts-table {
+    @apply table mx-auto w-full mt-5 border-collapse;
+  }
+
+  .contacts-table tbody {
+    @apply flex flex-col gap-2;
+  }
+
+  .contacts-table tbody tr {
+    @apply text-gray-800 py-3 bg-white flex flex-col sm:flex-row sm:py-2
+    sm:px-3 justify-between rounded;
+  }
+
+  .contacts-table tbody tr .delete {
+    @apply font-bold text-red-700 hover:text-red-500 cursor-pointer;
+  }
+
+  .contacts-table tbody tr .edit {
+    @apply font-bold text-green-700 hover:text-green-500 cursor-pointer rounded-r;
+  }
+}

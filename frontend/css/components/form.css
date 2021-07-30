@@ -1,0 +1,21 @@
+@layer components {
+  .form {
+    @apply sm:w-8/12 mt-8 mx-auto;
+  }
+
+  .form input {
+    @apply py-1 px-2 text-gray-800 font-medium w-full inline-block;
+  }
+
+  .form input:first-of-type {
+    @apply rounded-t;
+  }
+
+  .form input:last-of-type {
+    @apply rounded-b;
+  }
+
+  .form .input-alone {
+    @apply rounded;
+  }
+}

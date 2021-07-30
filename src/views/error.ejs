@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('./parts/meta-head', { pageTitle: 'Agenda', pageDescription:
+  'ERROR', needScript: false, scriptSrc: null }) %>
+
+  <body>
+    <%- include('./parts/header') %> <%- include('./parts/messages') %>
+
+    <main role="main">
+      <h2 class="title-bigger">Erro <%= status %></h2>
+
+      <p class="p-error">Oops, parece que a rota requisitada não existe.</p>
+
+      <a href="/" class="link">Voltar</a>
+    </main>
+  </body>
+</html>

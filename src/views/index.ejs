@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('./parts/meta-head', { pageTitle: 'Agenda', pageDescription:
+  'Adicione e gerencie seus contatos de forma intuitiva.', needScript: false,
+  scriptSrc: null }) %>
+
+  <body>
+    <%- include('./parts/header') %> <%- include('./parts/messages') %>
+
+    <main role="main">
+      <% if (user && contacts.length > 0) { %>
+      <h2 class="title">Olá, <%= user.name %>.</h2>
+
+      <table class="contacts-table" role="table">
+        <summary class="sr-only">Tabela de contatos</summary>
+
+        <thead class="sr-only">
+          <tr>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Telefone</th>
+            <th>Excluir</th>
+            <th>Editar</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% contacts.forEach(contact => { %>
+          <tr>
+            <th><%= contact.name %></th>
+            <th><%= contact.email %></th>
+            <th><%= contact.phone %></th>
+            <th class="delete">
+              <a href="/contact/delete/<%= contact._id %>">Excluir</a>
+            </th>
+
+            <th class="edit">
+              <a href="/contact/edit/<%= contact._id %>">Editar</a>
+            </th>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+      <% } else if (user && contacts.length == 0) { %>
+      <h2 class="title">
+        Olá, <%= user.name %>. Você ainda não cadastrou nenhum contato.
+      </h2>
+      <% } else { %>
+      <h2 class="title">Efetue login para ver seus contatos.</h2>
+      <% } %>
+    </main>
+  </body>
+</html>

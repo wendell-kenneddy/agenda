@@ -1,0 +1,23 @@
+<header class="page-header" role="banner">
+  <a href="/">
+    <h1 class="logo">Agenda</h1>
+  </a>
+
+  <nav role="navigation" class="nav">
+    <ul role="list">
+      <% if (!user) { %>
+      <li role="listitem">
+        <a href="/login" role="link">Login </a>
+      </li>
+      <% } else { %>
+      <li role="listitem">
+        <a href="/profile" role="link">Perfil </a>
+      </li>
+
+      <li role="listitem">
+        <a href="/contact" role="link">Cadastrar </a>
+      </li>
+      <% } %>
+    </ul>
+  </nav>
+</header>

@@ -1,0 +1,13 @@
+@layer components {
+  .alert {
+    @apply bg-red-200 border-red-700 text-red-700
+    font-medium rounded container w-10/12 sm:w-6/12
+    mt-14 mb-8 mx-auto p-3 flex flex-col items-start gap-2;
+  }
+
+  .success {
+    @apply bg-green-200 border-green-700 text-green-700
+    font-medium rounded container w-10/12 sm:w-6/12
+    mt-14 mx-auto p-3 flex flex-col items-start  gap-2;
+  }
+}

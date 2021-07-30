@@ -1,0 +1,13 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  body {
+    @apply w-screen h-screen bg-gray-100;
+  }
+
+  main {
+    @apply w-4/5 max-w-3xl mt-6 md:mt-14 mx-auto text-center overflow-auto;
+  }
+}

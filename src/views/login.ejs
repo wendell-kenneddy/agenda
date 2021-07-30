@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('./parts/meta-head', { pageTitle: 'Agenda', pageDescription:
+  'Efetue login na sua conta.', needScript: false, scriptSrc: null }) %>
+
+  <body>
+    <%- include('./parts/header') %> <%- include('./parts/messages') %>
+
+    <main role="main">
+      <% if (!user) { %>
+      <h2 class="title">Faça login na sua conta</h2>
+
+      <form action="/login" class="form login-form" role="form" method="POST">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+        <label for="name" class="sr-only">Nome de usuário</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Nome de usuário"
+        />
+
+        <label for="password" class="sr-only">Senha</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Senha"
+        />
+
+        <button class="btn-default" role="button">Continuar</button>
+      </form>
+
+      <div class="divider" role="separator">
+        <div></div>
+        <span>Ou</span>
+        <div></div>
+      </div>
+
+      <a href="/login/register" class="link" role="link"
+        >Crie uma conta gratuitamente.</a
+      >
+      <% } else { %>
+      <h2 class="title">
+        Olá, <%= user.name %>. Para entrar noutra conta, efetue logout e volte
+        para esta página.
+      </h2>
+      <% } %>
+    </main>
+  </body>
+</html>

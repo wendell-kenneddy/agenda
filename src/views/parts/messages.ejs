@@ -1,0 +1,12 @@
+<% if (errors.length > 0) { %>
+<div class="alert" role="alert">
+  <% errors.forEach(e => { %>
+  <p><%= e %></p>
+  <% }) %>
+</div>
+
+<% } else if (success.length > 0) { %>
+<div class="success">
+  <p><%= success %></p>
+</div>
+<% } %>

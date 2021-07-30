@@ -1,0 +1,25 @@
+@layer components {
+  .title {
+    @apply font-bold text-gray-800 text-2xl;
+  }
+
+  .title-big {
+    @apply font-bold text-gray-800 mb-6 text-3xl md:text-6xl;
+  }
+
+  .title-bigger {
+    @apply font-bold text-gray-800 text-8xl leading-tight;
+  }
+
+  .p-light {
+    @apply w-full sm:w-1/2 text-justify mt-4 text-gray-500;
+  }
+
+  .p-medium {
+    @apply font-medium text-lg mb-3;
+  }
+
+  .p-error {
+    @apply font-medium text-gray-800 text-2xl;
+  }
+}

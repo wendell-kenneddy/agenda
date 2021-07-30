@@ -1,0 +1,10 @@
+@import './global/reset.css';
+@import './components/text.css';
+@import './components/links.css';
+@import './components/btns.css';
+@import './components/divider.css';
+@import './components/table.css';
+@import './components/messages.css';
+@import './components/header.css';
+@import './components/form.css';
+@import './components/profile.css';

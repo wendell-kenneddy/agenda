@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('./parts/meta-head', { pageTitle: 'Agenda', pageDescription:
+  'Exclua um contato da sua agenda.', needScript: false, scriptSrc: null }) %>
+
+  <body>
+    <%- include('./parts/header') %> <%- include('./parts/messages') %>
+
+    <main role="main">
+      <h2 class="title">Por favor, digite sua senha.</h2>
+
+      <form
+        action="/contact/delete/<%= id %>"
+        method="POST"
+        class="form delete-form"
+        role="form"
+      >
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+        <label for="password" class="sr-only">Senha</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Senha"
+          class="input-alone"
+        />
+
+        <button class="btn-default" role="button">Continuar</button>
+      </form>
+    </main>
+  </body>
+</html>

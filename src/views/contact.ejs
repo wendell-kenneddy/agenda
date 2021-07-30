@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('./parts/meta-head', {
+    pageTitle: `Agenda | ${subject}`,
+    pageDescription: subject == 'Adicionar Contato' ? 'Adicionar um novo contato à agenda.' : 'Editar um contato já existente',
+    needScript: true,
+    scriptSrc: '/assets/scripts/index.js'  }) %>
+
+  <body >
+    <%- include('./parts/header') %> <%- include('./parts/messages') %>
+
+    <main role="main">
+      <h2 class="title"><%= subject %></h2>
+
+      <% if (!contact) { %>
+      <form
+        action="/contact" method="POST" class="form contact-form" role="form">
+      <% } else { %>
+      <form action="/contact/edit/<%= contact._id %>" method="POST" class="form" role="form">
+        <% } %>
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+        <label for="name" class="sr-only">Nome</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Nome"
+          value="<%= contact ? contact.name : '' %>"
+        />
+
+        <label for="email" class="sr-only">E-mail</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="E-mail"
+          value="<%= contact ? contact.email : '' %>"
+        />
+
+        <label for="phone" class="sr-only">Telefone</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="Telefone"
+          value="<%= contact ? contact.phone : '' %>"
+        />
+
+        <button class="btn-default" role="button">
+          <% if (!contact) { %> Adicionar <% } else { %>
+          Editar <% } %>
+        </button>
+      </form>
+    </main>
+  </body>
+</html>

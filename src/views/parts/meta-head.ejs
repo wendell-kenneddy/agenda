@@ -1,0 +1,27 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Wendell Kenneddy" />
+  <meta name="description" content="<%= pageDescription %>" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="<%= pageTitle %>" />
+  <meta property="og:description" content="<%= pageDescription %>" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="<%= pageTitle %>" />
+  <meta property="og:locale" content="pt-BR" />
+  <meta name="twitter:title" content="<%= pageTitle %>" />
+  <meta name="twitter:description" content="<%= pageDescription %>" />
+  <title><%= pageTitle %></title>
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link
+    rel="shortcut icon"
+    href="/assets/images/favicon.svg"
+    type="image/svg+xml"
+    sizes="32x32"
+    role="img"
+  />
+
+  <% if (needScript) { %>
+  <script src="<%= scriptSrc %>" defer></script>
+  <% } %>
+</head>

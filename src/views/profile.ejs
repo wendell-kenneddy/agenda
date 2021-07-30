@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('./parts/meta-head', { pageTitle: 'Agenda', pageDescription:
+  'Visualize seu perfil de usuário, ou faça logout.', needScript: false,
+  scriptSrc: null }) %>
+
+  <body>
+    <%- include('./parts/header') %> <%- include('./parts/messages') %>
+
+    <main role="main">
+      <section class="profile">
+        <h2 class="title-big">Olá, <%= user.name %>!</h2>
+
+        <p class="p-medium">Total de contatos cadastrados: <%= total %></p>
+
+        <button
+          form="logout-form"
+          class="btn-red btn-responsive"
+          role="button"
+          aria-describedby="logoutDescription"
+        >
+          Sair
+        </button>
+
+        <p class="p-light" id="logoutDescription">
+          Efetuar logout irá apenas encerrar sua sessão. Você pode entrar
+          novamente na sua conta indo para a página de login, após o logout.
+        </p>
+
+        <form action="/logout" id="logout-form" class="sr-only" role="form">
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
