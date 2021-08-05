@@ -4,7 +4,7 @@
   "main": "src/server.js",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon . --ignore public --ignore frontend",
+    "start": "node .",
     "css": "postcss frontend/css/main.css -o public/assets/css/styles.css",
     "js": "webpack"
   },
