@@ -49,9 +49,7 @@ const run = async () => {
     await Mongo.init();
     const port = process.env.PORT;
 
-    app.listen(port, () =>
-      console.log(`App running at http://localhost:${port}/`)
-    );
+    app.listen(port, () => console.log('Running'));
   } catch (err) {
     return console.log(err);
   }
